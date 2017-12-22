@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prezi task">
+    <title>Prezi list</title>
+</head>
+<body>
+	{% for prezi in prezis %}
+        <div>
+            <img src="{{ prezi.thumbnail }}">
+            <span class="info">{{ prezi.title }}, {{ prezi.created_on }}, {{ prezi.creator.name }}
+                <a href="{{ prezi.creator.profile_url }}">{{ prezi.creator.profile_url }}</a>
+            </span>
+        </div>
+    {% endfor %}
+</body>
+</html>
