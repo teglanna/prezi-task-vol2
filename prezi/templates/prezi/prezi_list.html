@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,15 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Prezi task">
     <title>Prezi list</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-	{% for prezi in prezis %}
-        <div>
-            <img src="{{ prezi.thumbnail }}">
+    <form method="GET" action="">
+        <input id="search-input" name="q" type="text" value="{{ request.GET.q }}" placeholder="Search..."/>
+    </form>
+    <div class="container">
+        <div class="grid">
+        {% if prezis %}
+        {% for prezi in prezis %}
+        <div class="cell">
+            <img src="{{ prezi.thumbnail }}" class="responsive-image">
             <span class="info">{{ prezi.title }}, {{ prezi.created_on }}, {{ prezi.creator.name }}
                 <a href="{{ prezi.creator.profile_url }}">{{ prezi.creator.profile_url }}</a>
             </span>
         </div>
-    {% endfor %}
+        {% endfor %}
+        {% else %}
+            Sorry there are no result for "{{ q }}"
+        {% endif %}
+        </div>
+    </div>
 </body>
 </html>
