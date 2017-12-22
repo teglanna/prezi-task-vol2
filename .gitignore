@@ -1,6 +1,4 @@
 *.py[co]
 db.sqlite3
 env/
-media/
-static/
 

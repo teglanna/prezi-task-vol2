@@ -1,0 +1,56 @@
+* {
+	box-sizing: border-box;
+}
+
+form {
+	width: 100%;
+	margin: 20px;
+	text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.responsive-image {
+  max-width: 100%;
+}
+
+.cell {
+	position: relative;
+	margin: 1rem;
+}
+
+.info {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	color: white;
+	text-align: left;
+	font-size: 0.8em;
+	padding: 0.5em;
+	background-color: rgba(205, 202, 207, 0.6)
+}
+
+.cell img {
+  display: block;
+}
+
+@media screen and (min-width: 600px) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .cell {
+    width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .cell {
+    width: calc(33.3333% - 2rem);
+  }
+}
