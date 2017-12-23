@@ -85,6 +85,26 @@ a {
   cursor: default;
 }
 
+.pagination {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.pagination li {
+  padding: 0.2px;
+}
+
+.pagination a, .pagination span {
+  color: #565d64;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination .active span {
+  background-color: #e9f1f4;
+}
 
 @media screen and (max-width: 767px) {
   #menu {
