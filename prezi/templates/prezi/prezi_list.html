@@ -7,12 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Prezi task">
     <title>Prezi list</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-    <form method="GET" action="">
-        <input id="search-input" name="q" type="text" value="{{ request.GET.q }}" placeholder="Search..."/>
-    </form>
+    <div id="menu" class="pure-g pure-menu-horizontal" style="align-items: center;">
+        <div class="pure-menu-heading pure-u-1 pure-u-md-1-2 pure-u-lg-1-3"><h1>Best Prezis<h1></div>
+        <div class="form-wrapper pure-u-1 pure-u-md-1-2 pure-u-lg-2-3">
+            <form class="search" method="GET" action="">
+                <div class="search_wrapper">
+                    <input type="text" name="q" placeholder="Search for..." class="search_field" value="{{ request.GET.q }}">
+                    <button type="submit" class="fa fa-search search_icon"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="container">
         <div class="grid">
         {% if prezis %}
